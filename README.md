@@ -1,7 +1,29 @@
 # WORKSTATION
-Intellegent worktation using Open Source Electronic Devices
-Intellegent power management system
-AI based User friendly UI
-Insures maximum Security
-multi platform support
-interactive user support
+<b>Description:</b>
+<p>Intellegent worktation using Open Source Electronic Devices</p>
+
+Features of this project include:</br>
+- Intellegent power management system</br>
+- AI based user friendly UI with natural language support</br>
+- Multi platform support</br>
+
+<b>Tools used:</b>
+- <a href="https://www.arduino.cc/en/Main/Software/">Arduino IDE</a>
+- <a href="https://wit.ai/">Wit.ai</a>
+- <a href="https://github.com/maniacbug/RF24">RF24 Library</a>
+
+<b>Team members:</b></br>
+
+1. Abu Jose George</br>
+2. Jayasanker Jayaprakash</br>
+3. Mishel Jyothis Paul</br>
+4. Rajiv Ambrose</br>
+
+<b>Components used:</b>
+- Arduino UNO
+- Raspberry Pi 3
+- NRF24L01+ tranceiver
+- LM35 temperature sensor
+- LDR
+- Proximity sensor
+- Relay module
