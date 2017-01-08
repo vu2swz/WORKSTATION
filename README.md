@@ -16,9 +16,9 @@ Features of this project include:</br>
 
 <b>Team members:</b></br>
 
-1. Abu Jose George</br>
+1. <a href="https://github.com/vu2swz">Abu Jose George</a></br>
 2. Jayasanker Jayaprakash</br>
-3. Mishel Jyothis Paul</br>
+3. <a href="https://github.com/h3llcr0w">Mishel Jyothis Paul</a></br>
 4. Rajiv Ambrose</br>
 
 <b>Components used:</b>
