@@ -11,6 +11,8 @@ Features of this project include:</br>
 - <a href="https://www.arduino.cc/en/Main/Software/">Arduino IDE</a>
 - <a href="https://wit.ai/">Wit.ai</a>
 - <a href="https://github.com/maniacbug/RF24">RF24 Library</a>
+- <a href="https://jasperproject.github.io/">Jasper</a>
+- <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian</a>
 
 <b>Team members:</b></br>
 
