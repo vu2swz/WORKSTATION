@@ -11,6 +11,7 @@ Features of this project include:</br>
 - Arduino
 - Python
 - PHP
+- Javascript
 - HTML
 - CSS
 
@@ -21,7 +22,6 @@ Features of this project include:</br>
 - <a href="https://github.com/wit-ai/pywit">Pywit</a>
 - <a href="https://www.apache.org/">Apache</a>, <a href="http://php.net/">Php5</a>
 - <a href="https://github.com/maniacbug/RF24">RF24 Library</a>
-- <a href="https://jasperproject.github.io/">Jasper</a>
 - <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian</a>
 
 <b>Team members:</b></br>
