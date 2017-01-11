@@ -4,7 +4,7 @@ from pprint import pprint
 from wit import Wit
 from random import randint
 
-access_token ="ERPMUCUVWFQTM3W6TKUS54E2HF2MASFQ"
+access_token =######################
 
 greetings = ['Hello','Hola', 'Bonjour']
 
