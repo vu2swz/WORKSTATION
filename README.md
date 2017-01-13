@@ -20,6 +20,7 @@ Features of this project include:</br>
 - <a href="https://wit.ai/">Wit.ai</a>
 - <a href="https://www.python.org/">Python</a>
 - <a href="https://github.com/wit-ai/pywit">Pywit</a>
+- <a href="https://python-telegram-bot.org/">Python-telegram-api</a>
 - <a href="https://www.apache.org/">Apache</a>, <a href="http://php.net/">Php5</a>
 - <a href="https://github.com/maniacbug/RF24">RF24 Library</a>
 - <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian</a>
