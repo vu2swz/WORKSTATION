@@ -1,4 +1,4 @@
-  #include <SPI.h> //Call SPI library so you can communicate with the nRF24L01+
+#include <SPI.h> //Call SPI library so you can communicate with the nRF24L01+
 #include <nRF24L01.h> 
 #include <RF24.h> 
 
@@ -7,6 +7,11 @@ int act_sens = A0;
 int temp_sens = A1;
 int temp_set = A2;
 int ldr = A3;
+int powerLED=3;
+int IDled =4;
+int state =0;
+int i=0;
+int S=0;
 
 
 
@@ -21,6 +26,7 @@ typedef struct{
   int activity;
   float temp;
   int light;
+  int ID;
 }data;
 
 data tr;
@@ -29,7 +35,10 @@ data tr;
 
 void setup()   
 {
-  //pinMode(act_sens,INPUT);
+   pinMode(7,INPUT_PULLUP);
+   pinMode(6,INPUT_PULLUP);
+   pinMode(5,INPUT_PULLUP);
+   //pinMode(act_sens,INPUT);
   pinMode(temp_set,INPUT);
   tr.node = node_id;
   Serial.begin(9600);  //start serial to communication
@@ -43,6 +52,57 @@ void setup()
 
 void loop()
 {
+  //Serial.println(state);
+  //*********************************
+  if(state==0)
+  {
+    digitalWrite(4,HIGH);
+    digitalWrite(3,LOW);
+  }
+  if(state==1)
+  {
+    digitalWrite(3,HIGH);
+    digitalWrite(4,LOW);
+    Serial.println("try reset");
+     if(digitalRead(5)==LOW)
+    {
+      digitalWrite(4,HIGH);
+       delay(500);
+       state=0;
+       S=0;
+       tr.ID=0;
+       digitalWrite(4,LOW);
+    }
+  }
+  while(state==0)
+   {
+    Serial.println("noID");
+    if(digitalRead(6)==LOW)
+     {
+      Serial.println("1");
+      digitalWrite(3,HIGH);
+      S=S*10+1;
+      delay(500);
+      digitalWrite(3,LOW);
+     }
+    if(digitalRead(7)==LOW)
+     {
+      Serial.println("2");
+      digitalWrite(3,HIGH);
+      S=S*10+2; 
+      delay(500);
+      digitalWrite(3,LOW);
+     }
+     if(digitalRead(5)==LOW)
+     {
+      state=1;
+      delay(500);
+      tr.ID=S;
+     }
+   }
+  //Serial.println(S);
+ 
+  //**************************************
   if(analogRead(act_sens)<50)
   tr.activity = 1;
   else
@@ -65,8 +125,11 @@ void loop()
      Serial.print(tr.diff); //print payload or the number the transmitter guessed
      Serial.print("\t Light: ");
      Serial.print(tr.light); //print payload or the number the transmitter guessed
+     Serial.print("\t ID: ");
+     Serial.print(tr.ID); //print payload or the number the transmitter guessed
      
      Serial.println();
+     
   if (!radio.write( &tr, sizeof(tr) ))
   {  
       Serial.println("Data sending failed");      
