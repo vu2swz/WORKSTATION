@@ -1,0 +1,3 @@
+cd /
+python ardread.py
+
