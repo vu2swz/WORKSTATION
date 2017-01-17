@@ -13,6 +13,7 @@ typedef struct{
   int activity;
   float temp;
   int light;
+  int ID;
 }data;
 
 data tr;
@@ -22,7 +23,7 @@ int fan[]={0,0,0,0};
 void setup()   
 {
   Serial.begin(57600);  //start serial to communication
-  Serial.println("Server On. Listening for transmissions "); 
+ // Serial.println("Server On. Listening for transmissions "); 
   radio.begin();  //Start the nRF24 module
   radio.openReadingPipe(1,rAddress[0]);      
   pinMode(3,OUTPUT);
@@ -46,14 +47,16 @@ void loop()
      if(tr.node>0&&tr.node<5)
      {
        tr.temp=abs(tr.temp);
-       Serial.print("Cabin: "); 
+       Serial.print(" "); 
      Serial.print(tr.node); //print which pipe or transmitter this is from
-     Serial.print("\t Activity: ");
+     Serial.print(" ");
      Serial.print(tr.activity); //print payload or the number the transmitter guessed
-     Serial.print("\t Temp: ");
+     Serial.print(" ");
      Serial.print(tr.temp); //print payload or the number the transmitter guessed
-     Serial.print("\t Light: ");
-     Serial.print(tr.light); //print p+ayload or the number the transmitter guessed
+     //Serial.print("\t Light: ");
+     //Serial.print(tr.light); //print p+ayload or the number the transmitter guessed
+     Serial.print(" ");
+     Serial.print(tr.ID); //print p+ayload or the number the transmitter guessed
      Serial.println();  
    }
      act[tr.node-1]=tr.activity;
@@ -73,4 +76,3 @@ void loop()
 
   delay(100);    
 }
-
