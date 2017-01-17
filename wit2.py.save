@@ -1,0 +1,78 @@
+import sys
+from wit import Wit
+from random import randint
+from pprint import pprint
+
+greetings = ['Hello','Hola', 'Bonjour']
+users={
+    'room 0':['Abu'],
+    'room 1':['Jayasanker'],
+    'room 2':'Mishel',
+    'room 4':'Rajiv',
+}
+
+
+access_token = 'ERPMUCUEWFQTM3W6TKUS54E2HF2MASFQ'
+#access_token = '5TBLCMKOKZSMNPXJWGMTA7WUVDTSWJQV'
+
+def send(request, response):
+    print(response['text'])
+
+def greet(request):
+    context=request['context']
+    context['greets']=greetings[randint(0,2)]
+#    pprint(context)
+    return context
+
+
+def find(request):
+    entities=request['entities']
+    context=request['context']
+    pprint(entities);
+    if 'location' in entities:
+     locn=entities['location'][0]['value']
+    else:
+     print("Couldn't obtain location")
+    val=''
+#    if 'location' in context:
+#       	val=users[content['location']]
+#	print context['location']
+#	print val
+    if locn=='room 0' :
+      val='Abu'
+    elif locn=='room 1' :
+      val='Jayasanker'
+    elif locn=='room 2' :
+      val='Mishel'
+    else :
+      val='Boo'
+
+    context['name0']=val
+    return context
+
+actions = {
+    'send': send,
+    'greet': greet,
+    'find':find,
+
+}
+
+query=sys.argv[1]
+#query=raw_input("Query:")
+client = Wit(access_token=access_token, actions=actions)
+
+#client.interactive()
+
+msg=client.run_actions('session1',query,{})
+#pprint(msg)
+
+#if 'msg' in msg:
+#   print msg['msg']
+if 'type' in msg:
+ while msg['type']!='stop':
+  if 'msg' not in msg:
+    pass
+  else:
+    print msg['msg']
+  msg=client.run_actions('test_session',query,{})
+#  pprint(msg)
