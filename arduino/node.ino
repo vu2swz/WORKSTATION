@@ -52,7 +52,7 @@ void setup()
 
 void loop()
 {
-  //Serial.println(state);
+  Serial.println(state);
   //*********************************
   if(state==0)
   {
