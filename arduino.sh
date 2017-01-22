@@ -1,3 +1,3 @@
 cd /
-python ardread.py
+python ardread.py & >~/logs/bot/arduino
 
