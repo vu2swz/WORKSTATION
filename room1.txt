@@ -1,8 +1,0 @@
-1484395414<!@!>js23: hi
-1484395414<!@!>Mario : Hola. How may I help you?
-1484397060<!@!>js23: hi
-1484397060<!@!>Mario : Bonjour. How may I help you?
-1484397084<!@!>js23: Turn on the lights in room 1
-1484397084<!@!>Mario : Lights turned on in room 1
-1484397365<!@!>js23: where is tony
-1484397365<!@!>Mario : tony is in room 3
