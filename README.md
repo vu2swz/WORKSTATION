@@ -48,98 +48,100 @@ Features of this project include:</br>
 
 <b>Installing Raspbian:</b>
 
-Follow <a href="https://www.raspberrypi.org/documentation/installation/installing-images/">this guide</a> to install and setup the Raspberry Pi.
+  Follow <a href="https://www.raspberrypi.org/documentation/installation/installing-images/">this guide</a> to install and setup the Raspberry Pi.
 
 <b>Installing Arduino IDE:</b>
 
-```bash
-$ sudo apt-get update
-$ sudo apt-get install arduino
-```
+   ```bash
+   $ sudo apt-get update
+   $ sudo apt-get install arduino
+   ```
 
 <b>Installing pywit:</b>
 
-Using `pip`:
-```bash
-$ pip install wit
-```
-From source:
-```bash
-$ git clone https://github.com/wit-ai/pywit
-$ python setup.py install
-```
+   Using `pip`:
+   ```bash
+   $ pip install wit
+   ```
+   From source:
+   ```bash
+   $ git clone https://github.com/wit-ai/pywit
+   $ python setup.py install
+   ```
 
 <b>Installing Telegram Bot API:</b>
 
-Using `pip`:
-```bash
-$ pip install python-telegram-bot --upgrade
-```
-From source:
-```bash
-$ git clone https://github.com/python-telegram-bot/python-telegram-bot
-$ cd python-telegram-bot
-$ python setup.py install
-```
+   Using `pip`:
+   ```bash
+   $ pip install python-telegram-bot --upgrade
+   ```
+   From source:
+   ```bash
+   $ git clone https://github.com/python-telegram-bot/python-telegram-bot
+   $ cd python-telegram-bot
+   $ python setup.py install
+   ```
 
 <b>Installing Apache2, PHP, MySQL, phpMyAdmin:</b>
 
-- Apache2:
-```bash
-$ sudo apt-get update
-$ sudo apt-get install apache2
-```
+  - Apache2:
+     ```bash
+     $ sudo apt-get update
+     $ sudo apt-get install apache2
+     ```
 
-- PHP:
-```bash
-$ sudo apt-get update
-$ sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
-```
+  - PHP:
+     ```bash
+     $ sudo apt-get update
+     $ sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
+     ```
 
-- MySQL:
-```bash
-$ sudo apt-get update
-$ sudo apt-get install mysql-server
-```
+  - MySQL:
+     ```bash
+     $ sudo apt-get update
+     $ sudo apt-get install mysql-server
+     ```
 
-- phpMyAdmin:
-```bash
-$ sudo apt-get update
-$ sudo apt-get install phpmyadmin php-mbstring php-gettext
-```
-> [ Don't forget to add to apache configuration file. ]
+  - phpMyAdmin:
+     ```bash
+     $ sudo apt-get update
+     $ sudo apt-get install phpmyadmin php-mbstring php-gettext
+     ```
+     > [ Don't forget to add to apache configuration file. ]
 
 ## Setting up the workstation:
 
-- Clone the repository
+1. Clone the repository
 
-```bash
-$ git clone https://github.com/vu2swz/WORKSTATION
-$ cd WORKSTATION
-```
-- Copy the webserver files to apache webroot
+    ```bash
+    $ git clone https://github.com/vu2swz/WORKSTATION
+    $ cd WORKSTATION
+    ```
+2. Copy the webserver files to apache webroot
 
-```bash
-$ sudo mv /webserver /var/www/html/
-```
-- Program the nodes using Arduino IDE with the given node.ino sketch. Vary the node id in the code for each device according to cabin number.
-- Program the server using Arduino IDE with the given server.ino sketch.
-- Connect the server to the network connected raspberry pi. Run the script to read from arduino as
+    ```bash
+    $ sudo mv /webserver /var/www/html/
+    ```
+3. Program the nodes using Arduino IDE with the given node.ino sketch. Vary the node id in the code for each device according to cabin number.
 
-```bash
-$ python ardread.py & >~/logs/bot/arduino
-```
-OR
+4. Program the server using Arduino IDE with the given server.ino sketch.
 
-```bash
-$ sh arduino.sh
-```
-- Run the telegram bot by running the script as
+5. Connect the server to the network connected raspberry pi. Run the script to read from arduino as
 
-```bash
-$ sudo python /var/www/html/chatbox/telbot.py & > ~/logs/bot/telegram
-```
-OR
-```bash
-$ sh telegram.sh
-```
+    ```bash
+    $ python ardread.py & >~/logs/bot/arduino
+    ```
+       OR
+
+    ```bash
+    $ sh arduino.sh
+    ```
+6. Run the telegram bot by running the script as
+
+    ```bash
+    $ sudo python /var/www/html/chatbox/telbot.py & > ~/logs/bot/telegram
+    ```
+       OR
+    ```bash
+    $ sh telegram.sh
+    ```
